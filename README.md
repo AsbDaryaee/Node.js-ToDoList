@@ -15,8 +15,9 @@ To run the application locally, you will need to have Node.js and MongoDB instal
 
 1. Clone this repository to your computer
 2. Install dependencies using npm install
-3. Start the server with npm start
-4. Open your web browser and go to http://localhost:3000
+3. Connect the app to your database
+4. Start the server with npm start
+5. Open your web browser and go to http://localhost:3000
 
 ## Contributing
 
