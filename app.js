@@ -3,17 +3,16 @@ const app = express()
 const tasks = require('./routers/tasks')
 const connectDB = require('./db/connect');
 const dotenv = require('dotenv').config();
-
-const port = 3000
+const notFound = require('./middlewares/notFound');
+const errorHandler = require('./middlewares/customErrorHandler');
+const port = process.env.PORT || 8000
 
 // *** *** *** MiddleWares
 app.use(express.json())
 app.use('/api/v1/tasks', tasks)
 app.use(express.static('./public'))
-
-
-// *** *** ***  Routes
-app.get('/', (req, res) => res.send("All Tasks: * http://localhost:3000/api/v1/tasks"))
+app.use('*', notFound)
+app.use(errorHandler)
 
 
 // *** *** *** Start Function
